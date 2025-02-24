@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fire Max Custom Room Panel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 20px;
+    }
+    .panel {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .active {
+      background-color: #28a745;
+      color: white;
+    }
+    .inactive {
+      background-color: #dc3545;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>Free Fire Max Custom Room Features</h1>
+    <button id="headshot" class="inactive" onclick="toggleFeature('headshot')">100% Headshot Lock: OFF</button>
+    <button id="norecoil" class="inactive" onclick="toggleFeature('norecoil')">No Recoil: OFF</button>
+    <button id="obupdate" class="inactive" onclick="toggleFeature('obupdate')">Latest OB Update Features: OFF</button>
+  </div>
+
+  <script>
+    function toggleFeature(feature) {
+      const button = document.getElementById(feature);
+      if (button.classList.contains('inactive')) {
+        button.classList.remove('inactive');
+        button.classList.add('active');
+        button.textContent = button.textContent.replace('OFF', 'ON');
+      } else {
+        button.classList.remove('active');
+        button.classList.add('inactive');
+        button.textContent = button.textContent.replace('ON', 'OFF');
+      }
+    }
+  </script>
+</body>
+</html>
